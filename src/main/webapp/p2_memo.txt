@@ -1,0 +1,184 @@
+1.login.jsp에서 시작해주세요
+2. 초반 웹페이지 로딩시 DB 입력작업에 시간이 소요됩니다.
+3.관리자 페이지가 따로 없습니다.
+
+
+
+drop sequence memseq ;
+
+create sequence memseq  
+increment by 1
+start with 1
+minvalue 0
+maxvalue 10000
+nocache;
+ 
+drop table members cascade constraints purge  ;
+create table members(
+	no number primary key,
+	name varchar2(30) not null,
+	id varchar2(30) not null,
+	password varchar2(30)not null,
+	rrn1 varchar2(30)not null,
+	rrn2 varchar2(30)not null,
+	email varchar2(60)not null
+);
+
+insert into members values(memseq.nextval, '모모', 'admin', '1234', '111111', '2222222','momo@nate.com') ;
+insert into members values(memseq.nextval, '홍길동', 'hong', '5678', '333333', '4444444','momo2@nate.com') ;
+commit;
+
+select * from members ;
+------------------------------------------------------------------
+
+drop sequence moiveseq ;
+
+create sequence moiveseq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+drop table movielist cascade constraints purge ;
+create table movielist(
+	mnum 	number primary key,
+	mimgsrc 	varchar2(150) not null,
+	kotitle 	varchar2(80) not null,
+	entitle 	varchar2(80) ,
+	shotstory 	varchar2(1500) ,
+	rating 	varchar2(80) not null,
+	director	varchar2(80) not null,
+	actor	varchar2(300) ,
+	pubdate	varchar2(80) not null
+  );
+  
+  select*from movielist;
+  
+  select *from movielist where kotitle like '%오%' ;
+  
+  -------------------------------------
+  
+  drop sequence cart_seq ;
+
+create sequence cart_seq 
+increment by 1
+start with 1
+minvalue 0
+maxvalue 10000
+nocache;
+
+drop table movie_cart cascade constraints purge ;
+create table movie_cart(
+cartnum 	number primary key,
+	cart_img 	varchar2(150) not null,
+	cart_title 	varchar2(80) not null,
+	cart_subtitle 	varchar2(80) ,
+	cart_story 	varchar2(1500) ,
+	cart_rate 	varchar2(80) not null,
+	cart_director	varchar2(80) not null,
+	cart_actor	varchar2(300) ,
+	cart_pubdate	varchar2(80) not null
+);
+
+select * from movie_cart;
+
+commit;
+-------------------------------------------------
+
+
+  drop sequence collection_seq ;
+
+create sequence collection_seq 
+increment by 1
+start with 1
+minvalue 0
+maxvalue 10000
+nocache;
+
+drop table collection cascade constraints purge ;
+create table collection(
+clnum 	number primary key,
+	cl_img 	varchar2(150) not null,
+	cl_title 	varchar2(80) not null,
+	cl_subtitle 	varchar2(80) ,
+	cl_story 	varchar2(1500) ,
+	cl_rate 	varchar2(80) not null,
+	cl_director	varchar2(80) not null,
+	cl_actor	varchar2(300) ,
+	cl_pubdate	varchar2(80) not null
+);
+
+select * from collection;
+
+commit;
+
+--------------------------------------------------------------
+
+drop sequence board_seq;
+create sequence board_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+
+drop table board cascade constraints purge ;
+create table board( 
+	num number not null primary key,
+	writer varchar2(30) not null,
+	email varchar2(50),
+	subject varchar2(30) not null,
+	passwd varchar2(30) not null,
+	reg_date date not null,
+	readcount int default 0,
+	ref number not null,
+	re_step number not null,
+	re_level number not null,
+	content varchar2(1000) not null
+);
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a1','a1','a1','1234','2015-1-1',1,0,0,'내용1' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a2','a2','a2','1234','2015-1-1',2,0,0,'내용2' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a21','a21','a21','1234','2015-1-1',2,4,1,'내용21' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a22','a22','a22','1234','2015-1-1',2,1,1,'내용22' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a221','a221','a221','1234','2015-1-1',2,3,2,'내용221' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a222','a222','a222','1234','2015-1-1',2,2,2,'내용222' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a3','a3','a3','1234','2015-1-1',7,0,0,'내용3' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a31','a31','a31','1234','2015-1-1',7,6,1,'내용31' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a311','a311','a311','1234','2015-1-1',7,7,2,'내용311' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a32','a32','a32','1234','2015-1-1',7,2,1,'내용32' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a321','a321','a321','1234','2015-1-1',7,5,2,'내용321' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a322','a322','a322','1234','2015-1-1',7,3,2,'내용322' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a3221','a3221','a3221','1234','2015-1-1',7,4,3,'내용3221' );
+
+insert into board(num,writer,email,subject,passwd,reg_date,ref,re_step,re_level,content )
+values(board_seq.nextval,'a33','a33','a33','1234','2015-1-1',7,1,1,'내용33' );
+
+commit;
+select * from board;

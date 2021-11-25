@@ -1,0 +1,123 @@
+
+  <%@ include file="../top.jsp"%>
+  
+   <%
+ 	int pageSize = 10; // 
+ 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+ 	
+ 	String pageNum = request.getParameter("pageNum");
+ 	if(pageNum == null){
+ 		pageNum="1";
+ 	}
+ 	
+ 	int currentPage = Integer.parseInt(pageNum); // 1, 2, 3, 17
+ 	int startRow = (currentPage - 1) * pageSize + 1; // 1, 11,21
+ 	int endRow = currentPage * pageSize; // 10, 20, 30
+ 	int count = 0;
+ 	int number = 0;
+ 	
+ 	ArrayList<BoardBean> blists = null;
+ 	
+ 	/* select~ */
+ 	BoardDao dao = BoardDao.getInstance();
+ 	count = dao.getAritcleCount(); 
+ 	System.out.println("레코드갯수 count:" + count);
+ 	if(count > 0){
+ 		blists = dao.getArticles(startRow, endRow);   
+ 	}
+ 	
+ 	number= count-(currentPage-1) * pageSize;
+ 	
+ %>
+   <!-- content -->
+   <div class="contents">
+     <div class="wpBox">
+       <h1 class="mainTit">게시판</h1>
+       <div class="tableWp">
+         <div class="boardBtnWp ar">
+           <a href="writeForm.jsp" class="btnDefault">글쓰기</a>
+         </div>
+         <!-- table -->
+         <table class="defaultTb">
+           <colgroup>
+             <col style="width:80px;">
+             <col style="width:600px;">
+             <col style="width:120px;">
+             <col style="width:180px;">
+             <col style="width:100px;">
+           </colgroup>
+           <thead>
+             <tr>
+               <th>번호</th>
+               <th>제목</th>
+               <th>작성자</th>
+               <th>작성일</th>
+               <th>조회</th>
+             </tr>
+           </thead>
+           <tbody>
+           	<%
+ 				for(int i=0;i<blists.size();i++){ 
+ 					BoardBean article = blists.get(i);
+ 			%>		
+             <tr>
+               <td><%=number-- %></td>
+               <td class="bTit">
+                 <!-- <span class="material-icons md-18">subdirectory_arrow_right</span> 답글일경우 노출 -->
+                 <a href="/work/momo/board/view.html" target="">제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하</a>
+               </td>
+               <td><span class="usName">작성자아이디아이디작성자아이디아이디</span></td>
+               <td>2021-08-15 00:00:00</td>
+               <td>3</td>
+             </tr>
+             <tr>
+               <td>1</td>
+               <td class="bTit">
+                 <span class="material-icons md-18">subdirectory_arrow_right</span><!-- 답글일경우 노출 -->
+                 <a href="/work/momo/board/view.html" target="">제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하</a>
+               </td>
+               <td><span class="usName">작성자아이디아이디작성자아이디아이디</span></td>
+               <td>2021-08-15 00:00:00</td>
+               <td>3</td>
+             </tr>
+             <tr>
+               <td>1</td>
+               <td class="bTit"><a href="/work/momo/board/view.html" target="">제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하</a></td>
+               <td><span class="usName">작성자아이디아이디</span></td>
+               <td>2021-08-15 00:00:00</td>
+               <td>3</td>
+             </tr>
+             <tr>
+               <td>1</td>
+               <td class="bTit"><a href="/work/momo/board/view.html" target="">제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하</a></td>
+               <td><span class="usName">작성자아이디아이디</span></td>
+               <td>2021-08-15 00:00:00</td>
+               <td>3</td>
+             </tr>
+           </tbody>
+         </table>
+         <!-- //table -->
+         
+         <!-- 페이징 -->
+         <div class="pageNavWp">
+           <ul class="pageNav after">
+             <li><a href="#none">1</a></li>
+             <li><a href="#none">2</a></li>
+             <li><a href="#none">3</a></li>
+           </ul>
+         </div>
+         <!-- //페이징 -->
+       </div><!-- //tableWp -->
+     </div>
+   </div>
+   <!-- //content -->
+   
+   <!-- footer -->
+   <div class="footer">
+     <div class="wpBox">
+       copyright 2021. all rights reserved.
+     </div>
+   </div>
+   <!-- //footer -->
+ </body>
+</html>

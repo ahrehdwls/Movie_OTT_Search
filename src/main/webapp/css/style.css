@@ -1,0 +1,175 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+  /* Rules for sizing the icon. */
+  .material-icons.md-18 { font-size: 18px; }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-36 { font-size: 36px; }
+  .material-icons.md-48 { font-size: 48px; }
+
+  /* Rules for using icons as black on a light background. */
+  .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+  .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+  /* Rules for using icons as white on a dark background. */
+  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+/* common */
+.wpBox {width:1080px; margin:0 auto; box-sizing:border-box;}
+.p_re {position:relative;}
+.dim {display:none; width:100%; height:100%; position:absolute; top:0; left:0; background:rgba(0,0,0,0.8); z-index:1; }
+.after:after {content:''; display:block; clear:both;}
+.ar {text-align:right;}
+.al {text-align:left;}
+.ac {text-align:center;}
+.wM {width:30%}
+.pointColor {color:#f00 !important;}
+.fwB {font-weight:700;}
+table {border-collapse:collapse; border:0;}
+table col {display: table-column;}
+button {background:transparent; border:none;padding:0;}
+input:focus, 
+textarea:focus {border:none; outline:none; border:1px solid #f00 !important;}
+textarea {resize:none; height:100%; }
+input, textarea {background:transparent; border:1px solid #525252; padding:5px 10px; font-size:14px; width:100%; color:#fff;font-family:'Nanum Gothic','Malgun Gothic','맑은 고딕', sans-serif; box-sizing:border-box;}
+textarea {resize:none; height:100%; }
+input::placeholder, textarea::placeholder {color:#525252; font-family:'Nanum Gothic','Malgun Gothic','맑은 고딕', sans-serif;}
+
+
+/* header */
+.header {width:100%; height:118px;border-bottom:1px solid #747474; background-color:rgba(255,255,255,0.1);}
+.hTop {padding:20px 0 10px;}
+.hTop .logo {display:inline-block; float:left;}
+.hTop .joinWp {float:right; margin-top:15px; display:flex;}
+.hTop .joinWp a {font-size:14px; padding:5px;}
+.hTop .joinWp .join {margin-left:5px;}
+.hBtm {border-top:1px solid #747474; padding:10px 0;}
+.hBtm .nav {display:flex; justify-content:space-between}
+.hBtm .nav li a:hover {color:#e50914; font-weight:700;}
+.hBtm .nav li.on a {color:#e50914; font-weight:700;}
+
+/* footer */
+.footer {border-top:1px solid #747474; color:#fff; padding:20px 0; text-align:center; font-size:14px; font-weight:400;}
+
+
+/* contents */
+.contents {padding:50px 0; }
+.movieListWp .movieList {display:block;}
+.movieListWp .movieList:after {content:''; clear:both; display:block;}
+.movieList > li {float:left; margin-left:16px; margin-top:32px; position:relative; width:258px; height:378px;}
+.movieList > li:first-child {margin-left:0; margin-top:0;}
+.movieList > li:nth-child(4n+1) {margin-left:0;}
+.movieList > li:nth-child(2), .movieList > li:nth-child(3), .movieList > li:nth-child(4) {margin-top:0;}
+.movieList > li > img {width:100%; height:auto; max-width:264px; max-height:377px;}
+.movieList > li > img:hover {transition: transform .3s; -ms-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); z-index:1}
+.movieList > li .over {display:none; background:rgba(0,0,0,0.8); position:absolute; top:0; left:0; z-index:1; width:100%; height:100%; padding:50px 20px; box-sizing:border-box;}
+.movieList > li .over .disc > li {width:100%; font-size:14px; color:#fff; line-height:1.2; margin-top:10px;}
+.movieList > li .over .disc > li.tit {font-size:18px; font-weight:700; color:#e50914;margin-bottom:80px; text-align:center; word-break:keep-all; line-height:22px; height:66px;}
+.movieList > li .over .disc > li.story {overflow:hidden; width:100%; height:96px; white-space:no-wrap; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:6; -webkit-box-oriental:vertical;}
+.movieList > li .over .btnMore {width:100%; height:100%; display:flex; justify-content:flex-end; align-content:flex-end; align-items:flex-end; position:absolute; top:0; left:0; font-size:14px; color:#fff; padding:0 20px 20px 0; box-sizing:border-box;}
+.movieList > li .over .btnMore > span {margin-bottom:2px; margin-right:2px;}
+.movieList > li:hover .over {display:block;}
+
+/* 영화자세히보기 팝업 */
+.popDetail {display:none; line-height:20px; border:1px solid #525252; width:800px; height:620px; position:fixed; top:calc(50vh - 310px); left:calc(50% - 400px); background:rgba(0,0,0,0.85); z-index:2; padding:20px; box-sizing:border-box;}
+.popDetail .popClose {font-size:20px; color:#fff; font-weight:700; margin:0; position:absolute; top:10px; right:10px; }
+.popDetail h1 {font-size:36px; color:#f00; text-align:center; font-weight:700; margin:20px 0; line-height:40px;}
+.popDetail h1 span {font-size:20px; font-weight:400; display:block; line-height:26px;}
+.popDetail dl {width:100%; margin:20px 0;}
+.popDetail dl > dt {float:left; width:45px; }
+.popDetail dl > dd {float:left; width:calc(100% - 45px);}
+.popDetail .subBtnWp {margin:20px 0;}
+.popDetail .subBtnWp form {display:inline-block;}
+.popDetail .subBtnWp input[type="submit"] {width:auto; padding:5px 10px; border:1px solid #fff; margin-left:5px;font-size:14px;line-height:14px;}
+.popDetail .subBtnWp > a {display:inline-block; padding:5px 10px; border:1px solid #fff; margin-left:5px; font-size:14px; line-height:14px;}
+.popDetail .subBtnWp > a:first-of-type {margin-left:0;}
+.popDetail .mInfo {width:100%; margin-top:40px; }
+.popDetail .mInfo > div {float:left; box-sizing:border-box; }
+.popDetail .mInfo .infoL {padding-right:10px; text-align:center; width:40%;}
+.popDetail .mInfo .infoR {border-left:1px solid #525252; padding-left:30px; width:60%; height:420px;}
+.popDetail .mInfo .infoR .iStory {overflow:hidden; height:262px; line-height:20px; white-space:no-wrap; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:13; -webkit-box-oriental:vertical;}
+
+
+
+/* board */
+.mainTit {font-size:36px; color:#fff; font-weight:700; text-align:center; margin-top:20px;}
+.tableWp {padding:70px 0;}
+.defaultTb thead th,
+.defaultTb tbody th,
+.defaultTb tbody td {text-align:center; font-size:14px; color:#fff; vertical-align:middle; box-sizing:border-box;  }
+.defaultTb thead th {background:#262626; line-height:20px; padding:8px 0; height:36px;}
+.defaultTb tbody th {background:#262626; border-bottom:1px solid #262626;line-height:20px; padding:12px 0; height:44px;}
+.defaultTb tbody td {border-bottom:1px solid #262626;line-height:20px; padding:12px 0; height:44px; }
+.defaultTb tbody td.bTit {text-align:left; padding:12px 10px;}
+.defaultTb tbody td.bTit > a {display:inline-block; max-width:580px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.defaultTb tbody td.bImg > a {width:110px; display:inline-block; text-align:center;}
+.defaultTb tbody td.bImg > a img {width:100%; height:auto; max-height:161px; }
+.defaultTb tbody td .usName {display:inline-block; max-width:120px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.defaultTb tbody td .btnDel,
+.defaultTb tbody td .btnAdd {display:inline-block; width:24px; height:24px;}
+.defaultTb tbody tr:last-child th,
+.defaultTb tbody tr:last-child td {border-bottom:2px solid #525252}
+
+.defaultTb.typeBdTop {border-top:2px solid #525252;}
+.defaultTb.writeTb tbody td {text-align:left; padding:2px 15px;}
+.defaultTb.writeTb tbody tr.tdCont th,
+.defaultTb.writeTb tbody tr.tdCont td {height:350px;}
+.defaultTb.writeTb tbody tr.tdCont td {padding:10px 15px;}
+.defaultTb.typeSearch tbody td.bTit > a {max-width:480px;}
+
+
+.boardBtnWp {height:24px; display:block; width:100%; margin:20px 0;}
+.boardBtnWp ul {display:inline-block;}
+.boardBtnWp ul:after {content:''; display:block; clear:both;}
+.boardBtnWp ul li {float:left; margin-left:10px; }
+.boardBtnWp ul li:first-child {margin-left:0;}
+.boardBtnWp .btnDefault {display:inline-block; line-height:23px; height:25px; color:#fff; text-align:center; border:1px solid #fff; box-sizing:border-box; font-size:14px; padding:0 10px; }
+
+/* paging */
+.pageNavWp {width:100%; display:block; text-align:center; margin-top:20px;}
+.pageNavWp .pageNav {display:inline-block; }
+.pageNavWp .pageNav li {float:left; line-height:24px;}
+.pageNavWp .pageNav li a {display:inline-block; line-height:24px; padding:5px;}
+.pageNavWp .pageNav li:before {content:''; display:block; float:left; width:1px; height:14px; margin:10px; background:#262626; }
+.pageNavWp .pageNav li:first-child:before {display:none;}
+
+
+/* board : 글보기 */
+.viewWp {padding:70px 0;}
+.viewWp .postInfo {padding:20px 0; border-bottom:1px solid #525252; margin-bottom:20px; text-align:right;}
+.viewWp .postInfo .postTit {font-size:24px; font-weight:700; line-height:30px; margin-bottom:10px; text-align:left;}
+.viewWp .postInfo ul {display:inline-block;}
+.viewWp .postInfo ul li {float:left; line-height:20px; font-size:12px;}
+.viewWp .postInfo ul li:before {content:''; display:block; float:left; width:1px; height:14px; margin:3px 10px; background:#262626; }
+.viewWp .postInfo ul li:first-child:before {display:none;}
+.viewWp .postCont {padding:15px 0; box-sizing:border-box; width:100%; height:auto; min-height:300px; line-height:28px; border-bottom:1px solid #525252;}
+
+/* 삭제하기 */
+.deleteWp {min-height:calc(100vh - 330px); display:flex; justify-content:center; align-content:center; align-items:center;}
+.deleteWp .deleteBox {margin-top:-100px; width:70%; border:1px solid #525252; padding:20px; box-sizing:border-box; height:300px; text-align:center;}
+.deleteWp .deleteBox p { margin-top:50px; font-size:20px; line-height:26px; font-weight:700; margin-bottom:40px;}
+.deleteWp .deleteBox .boardBtnWp {margin-top:40px;}
+
+
+/* 찜한영화, 최근본영화 */
+.defaultTb.typeMovie tbody td.bImg > a {width:110px; display:inline-block; text-align:center;}
+.defaultTb.typeMovie tbody td.bImg > a img {width:100%; height:auto; max-height:161px; }
+.defaultTb.typeMovie tbody td .btnDel {display:inline-block; width:24px; height:24px;}
+
+
+
+/* search */
+.schBox {padding:70px 0 20px}
+.searchWp {width:100%; margin-bottom:30px;}
+.searchBox {width:319px; display:inline-block;}
+.searchBox .searchTxt {width:274px; float:left; padding:10px; }
+.searchBox .searchBtn {width:45px; height:38px; display:block; float:left; border:1px solid #525252; border-left:0; padding:5px 5px 5px 7px;}
+.searchBox .searchTxt:focus + .searchBtn {border-color:#f00;}
+
+.searchResult {margin-bottom:20px;}
+.searchResult p {text-align:center; color:#fff; font-size:14px;}
+.searchResult.onlyTxt {min-height:calc(100vh - 330px); display:flex; justify-content:center; align-content:center; align-items:center; margin:0;}
+.searchResult.onlyTxt p {margin-top:-100px;}
+
+

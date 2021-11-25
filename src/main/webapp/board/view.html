@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>모모 프로젝트-게시판</title>
+  <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+ </head>
+ <body>
+  <!-- header -->
+  <div class="header">
+    <div class="hTop wpBox after">
+      <h1 class="logo">
+        <a href="/work/momo/"><i class="material-icons md-48">movie</i></a>
+      </h1>
+      <div class="joinWp">
+        <a href="#none" class="login"><i class="material-icons md-light">login</i></a><!-- 로그인상태일경우 텍스트 logout 로 변경 -->
+        <a href="#none" class="join"><i class="material-icons md-light">person</i></a><!-- 로그인상태일경우 비노출 -->
+      </div>
+    </div>
+    <div class="hBtm">
+      <ul class="nav wpBox">
+        <li><a href="/work/momo/">영화 목록</a></li><!-- 활성화시 class 추가 : on -->
+        <li><a href="#none">최근 본 영화</a></li>
+        <li><a href="/work/momo/cart.html">찜한 영화</a></li>
+        <li class="on"><a href="/work/momo/board/list.html">게시판</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- //header -->
+  
+   <!-- content -->
+   <div class="contents">
+     <div class="wpBox">
+       <h1 class="mainTit">게시판 글보기</h1>
+       <div class="viewWp">
+         <div class="postInfo">
+           <h2 class="postTit">%제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하제목영역입니다. 가나다라마바사 아자차카타파하 가나다라마바사 아자차카타파하%</h2>
+           <ul class="after">
+             <li>글번호 : %글번호%</li>
+             <li>조회수 : %조회수%</li>
+             <li>작성자 : %작성자%</li>
+             <li>작성일 : %작성일%</li>
+           </ul>
+         </div>
+         <div class="postCont">
+           % 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 글내용 가나다라마바사 아자차카타파샇 %
+         </div>
+         <div class="boardBtnWp ar">
+           <ul>
+             <li>
+               <a href="#none" class="btnDefault">수정</a>
+             </li>
+             <li>
+               <a href="/work/momo/board/delete.html" class="btnDefault">삭제</a>
+             </li>
+             <li>
+               <a href="#none" class="btnDefault">답글쓰기</a>
+             </li>
+             <li>
+               <a href="/work/momo/board/list.html" class="btnDefault">목록</a>
+             </li>
+           </ul>
+         </div>
+       </div><!-- //viewWp -->
+     </div>
+   </div>
+   <!-- //content -->
+   
+   <!-- footer -->
+   <div class="footer">
+     <div class="wpBox">
+       copyright 2021. all rights reserved.
+     </div>
+   </div>
+   <!-- //footer -->
+ </body>
+</html>
